@@ -154,7 +154,7 @@ export const dataToPieChart = (data, settings) => {
     const obj = {
       id: label,
       label: label,
-      value: +arr.filter(item => item[keyName] === label)[0][value].toFixed(2)
+      value: parseInt(arr.filter(item => item[keyName] === label)[0][value].toFixed(2))
     };
 
     chartData.push(obj);

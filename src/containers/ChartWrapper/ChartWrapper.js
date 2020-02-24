@@ -4,7 +4,9 @@ import './ChartWrapper.scss';
 import { reformatData } from '../../helpers/builderHelpers';
 
 const ChartWrapper = props => {
-  const numberOfCharts = window.innerWidth < 479 ? 1 : window.innerWidth > 1023 ? 3 : 2;
+  const mobile = 480;
+  const screen = 1023;
+  const numberOfCharts = window.innerWidth < mobile ? 1 : window.innerWidth > screen ? 3 : 2;
   const width = 100 / numberOfCharts;
   const { data, settings } = props;
   const newData = reformatData(data);
