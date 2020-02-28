@@ -12,13 +12,13 @@ const App = props => {
     keyName: 'productName',
     xAxis: 'transactionDate',
     yAxis: 'transactionAmount',
-    period: 'month',
+    // period: 'month',
     groupMode: 'stacked'
   };
 
   const pieSettings = {
     type: 'pie',
-    keyName: 'transactionDate',
+    keyName: 'productName',
     // period: 'month',
     value: 'transactionAmount'
   };
@@ -27,7 +27,7 @@ const App = props => {
     type: 'bubble',
     value: 'transactionAmount',
     name: 'bubble',
-    childrenArray: ['transactionDate', 'transactionCategory', '', 'productName', 'customerName']
+    childrenArray: ['', 'transactionCategory', '', 'productName', 'transactionDateу']
   };
 
   return (

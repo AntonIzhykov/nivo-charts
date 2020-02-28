@@ -31,9 +31,10 @@ const PieBuilder = ({ data, defs, fills, legends }) => {
     radialLabelsTextColor="#333333"
     radialLabelsLinkOffset={0}
     radialLabelsLinkDiagonalLength={5}
-    radialLabelsLinkHorizontalLength={24}
+    radialLabelsLinkHorizontalLength={5}
     radialLabelsLinkStrokeWidth={1}
     radialLabelsLinkColor={{ from: 'color' }}
+    sortByValue={true}
     slicesLabelsSkipAngle={10}
     slicesLabelsTextColor="#333333"
     animate={true}

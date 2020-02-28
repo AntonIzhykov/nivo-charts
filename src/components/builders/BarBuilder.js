@@ -28,6 +28,7 @@ const BarBuilder = ({ data, keys, indexBy, groupMode, animate = false }) => (
       legendPosition: 'middle',
       legendOffset: -40
     }}
+    enableLabel={false}
     groupMode={groupMode}
     labelSkipWidth={12}
     labelSkipHeight={12}

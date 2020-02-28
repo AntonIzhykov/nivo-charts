@@ -1,7 +1,7 @@
 import React from 'react';
 import { buildChart } from '../../components/builders';
-import './ChartWrapper.scss';
 import { reformatData } from '../../helpers/builderHelpers';
+import './ChartWrapper.scss';
 
 const ChartWrapper = props => {
   const mobile = 480;

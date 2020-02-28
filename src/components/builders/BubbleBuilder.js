@@ -1,7 +1,7 @@
 import React from 'react';
 import { ResponsiveBubble } from '@nivo/circle-packing';
 
-const BubbleBuilder = ({ root, value }) => {
+const BubbleBuilder = ({ root, value, enableLabel }) => {
   return (
     <ResponsiveBubble
       root={root}
@@ -10,7 +10,9 @@ const BubbleBuilder = ({ root, value }) => {
       value={value}
       colors={{ scheme: 'nivo' }}
       padding={6}
+      enableLabel={enableLabel}
       labelTextColor={{ from: 'color', modifiers: [['darker', 0.8]] }}
+      labelSkipRadius={0}
       borderWidth={2}
       borderColor={{ from: 'color' }}
       defs={[
