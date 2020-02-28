@@ -1,7 +1,7 @@
 import React from 'react';
 import { ResponsivePie } from '@nivo/pie'
 
-const PieBuilder = ({ data, defs, fills, legends }) => {
+const PieBuilder = ({ data, sortByValue, negative, defs, fills, legends }) => {
   return (
   <ResponsivePie
     data={data}
@@ -34,12 +34,13 @@ const PieBuilder = ({ data, defs, fills, legends }) => {
     radialLabelsLinkHorizontalLength={5}
     radialLabelsLinkStrokeWidth={1}
     radialLabelsLinkColor={{ from: 'color' }}
-    sortByValue={true}
+    sortByValue={sortByValue}
     slicesLabelsSkipAngle={10}
     slicesLabelsTextColor="#333333"
     animate={true}
     motionStiffness={90}
     motionDamping={15}
+    tooltipFormat={value => `${negative ? '-' + (value) : value}`}
     defs={defs ? defs : []}
     fill={fills ? fills : []}
     legends={legends ? [

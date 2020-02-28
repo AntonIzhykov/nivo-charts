@@ -18,8 +18,10 @@ const App = props => {
 
   const pieSettings = {
     type: 'pie',
-    keyName: 'productName',
-    // period: 'month',
+    keyName: 'transactionDate',
+    period: 'month',
+    negative: true,
+    sortByValue: true,
     value: 'transactionAmount'
   };
 
@@ -27,7 +29,7 @@ const App = props => {
     type: 'bubble',
     value: 'transactionAmount',
     name: 'bubble',
-    childrenArray: ['', 'transactionCategory', '', 'productName', 'transactionDateу']
+    childrenArray: ['', 'transactionCategory', '', 'productName', 'transactionDate']
   };
 
   return (

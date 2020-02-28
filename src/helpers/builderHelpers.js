@@ -110,7 +110,8 @@ export const dataToBubbleChart = (data, settings) => {
   const root = createRoot(filtered, data, name, value);
 
   let chartSettings = {
-    value: 'value'
+    value: 'value',
+    enableLabel: true
   };
 
   return {
@@ -123,7 +124,7 @@ export const dataToBubbleChart = (data, settings) => {
  * convert entry data to pie chart
  */
 export const dataToPieChart = (data, settings) => {
-  const { value, period } = settings;
+  const { value, period, negative  } = settings;
   let { keyName } = settings;
 
   let chartData = [];
@@ -148,6 +149,12 @@ export const dataToPieChart = (data, settings) => {
     });
   }
 
+  if (negative) {
+    arr = arr.filter(item => item[value] < 0).map(item => ({...item, [value]: Math.abs(item[value])}));
+  } else {
+    arr = arr.filter(item => item[value] > 0)
+  }
+
   const labels = _.uniq(arr.map(item => item[keyName])).filter(item => !!item);
 
   labels.forEach(label => {
@@ -156,7 +163,6 @@ export const dataToPieChart = (data, settings) => {
       label: label,
       value: parseInt(arr.filter(item => item[keyName] === label)[0][value].toFixed(2))
     };
-
     chartData.push(obj);
   });
 
@@ -202,10 +208,10 @@ export const dataToPieChart = (data, settings) => {
         id: 'lines'
       }
     ],
-    legends: `${chartData.length < 5}`
+    legends: chartData.length < 5
   };
   return {
     chartData,
-    ...chartSettings
+    chartSettings
   };
 };
