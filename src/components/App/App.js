@@ -12,7 +12,7 @@ const App = props => {
     keyName: 'productName',
     xAxis: 'transactionDate',
     yAxis: 'transactionAmount',
-    // period: 'month',
+    period: 'week',
     groupMode: 'stacked'
   };
 
@@ -20,7 +20,7 @@ const App = props => {
     type: 'pie',
     keyName: 'transactionDate',
     period: 'month',
-    negative: true,
+    negative: false,
     sortByValue: true,
     value: 'transactionAmount'
   };

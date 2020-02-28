@@ -3,6 +3,12 @@ import React from 'react';
 import { BarBuilder, BubbleBuilder, PieBuilder } from './index';
 import { dataToBarChart, dataToBubbleChart, dataToPieChart } from '../../helpers';
 
+/**
+ * depending on the value of the "type" parameter in the settings object converts the data and builds the desired schedule
+ * @param {Object} data
+ * @param {Object} settings
+ * @returns {*}
+ */
 const buildChart = (data, settings) => {
   const { type } = settings;
   switch (type) {

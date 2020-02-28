@@ -43,27 +43,7 @@ const PieBuilder = ({ data, sortByValue, negative, defs, fills, legends }) => {
     tooltipFormat={value => `${negative ? '-' + (value) : value}`}
     defs={defs ? defs : []}
     fill={fills ? fills : []}
-    legends={legends ? [
-      {
-        anchor: 'bottom',
-        direction: 'row',
-        translateY: 56,
-        itemWidth: 80,
-        itemHeight: 18,
-        itemTextColor: '#000',
-        itemTextSize: 5,
-        symbolSize: 16,
-        symbolShape: 'circle',
-        effects: [
-          {
-            on: 'hover',
-            style: {
-              itemTextColor: '#000'
-            }
-          }
-        ]
-      }
-    ] : []}
+    legends={legends ? legends : []}
   />
 )};
 
